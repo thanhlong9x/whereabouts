@@ -36,6 +36,15 @@ spec:
           spec:
             description: IPPoolSpec defines the desired state of IPPool
             properties:
+              condition:
+                additionalProperties:
+                  properties:
+                    ip:
+                      description: IP represents metadata about status allocation IP of network pool
+                      type: string
+                  type: object
+                description: condition is the set status allocation of IPs for each network pool in sequence mode
+                type: object
               allocations:
                 additionalProperties:
                   description: IPAllocation represents metadata about the pod/container
